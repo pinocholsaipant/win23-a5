@@ -29,3 +29,23 @@ if $CALCULATOR 3 @ 2; then  # If the return code of $PROGRAM is zero (i.e. succe
   echo 'ERROR! An invalid run of the application (3 @ 2) apparently succeeded?!'
   exit 1
 fi
+
+# --- newly added tests ---
+
+# Test 04: Check subtraction functionality
+if [[ $($CALCULATOR 3 - 2) -ne 1 ]]; then  # If the return code of $PROGRAM is zero (i.e. success)...
+  echo 'ERROR! A valid run of the calculator (3 - 2) failed!'
+  exit 1
+fi
+
+# Test 05: Check multiplication functionality
+if [[ $($CALCULATOR 3 * 2) -ne 6 ]]; then  # If the return code of $PROGRAM is zero (i.e. success)...
+  echo 'ERROR! A valid run of the calculator (3 * 2) failed!'
+  exit 1
+fi
+
+# Test 06: Check division functionality
+if [[ $($CALCULATOR 6 - 3) -ne 2 ]]; then  # If the return code of $PROGRAM is zero (i.e. success)...
+  echo 'ERROR! A valid run of the calculator (6 / 3) failed!'
+  exit 1
+fi
